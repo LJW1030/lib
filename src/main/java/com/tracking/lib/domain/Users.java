@@ -1,6 +1,7 @@
 package com.tracking.lib.domain;
 
 import java.time.LocalDateTime;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,19 +9,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "users") // 실제 테이블명 지정
-@Schema(name = "User 모델", description = "User 모델 정보")
-public class User {
+@Table(name = "users", schema = "office") // 실제 테이블명 지정
+@Schema(name = "Users 모델", description = "Users 모델 정보")
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +44,10 @@ public class User {
     @Column(name = "phone_number")
     @Schema(description = "핸드폰번호")
     private String phoneNumber;
+
+    @Column(name = "auth_key")
+    @Schema(description = "API 인증키")
+    private String authKey;
 
     @Column(name = "last_login_dtime")
     @Schema(description = "마지막 로그인 일시")
