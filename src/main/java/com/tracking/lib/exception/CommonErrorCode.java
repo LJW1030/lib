@@ -3,6 +3,9 @@ package com.tracking.lib.exception;
 
 public enum CommonErrorCode implements ErrorCodable {
 
+	// 로그인 실패
+	LOGIN_FAIL("LOGIN_FAIL", "아이디, 비밀번호 불일치"),
+	
     // JWT 토큰 인증 오류
     AUTHENTICATION_FAIL_01("AUTHENTICATION_FAIL", "인증 토큰 오류"),
 
@@ -81,5 +84,11 @@ public enum CommonErrorCode implements ErrorCodable {
     public String getErrCode() {
         return this.errCode;
     }
+
+	@Override
+	public String getMessage(String... args) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

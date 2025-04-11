@@ -1,7 +1,5 @@
 package com.tracking.lib.exception;
 
-import com.pluson.lib.common.utility.ErrorCodeUtil;
-
 public enum UserErrCode implements ErrorCodable {
 
     // 검색기간 미입력
@@ -46,8 +44,10 @@ public enum UserErrCode implements ErrorCodable {
         return this.errCode;
     }
 
-    @Override
-    public String getMessage(String... args) {
-        return ErrorCodeUtil.parseMessage(this.message, args);
-    }
+	@Override
+	public String getMessage(String... args) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
